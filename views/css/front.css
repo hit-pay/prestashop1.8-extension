@@ -1,0 +1,12 @@
+img.hitpay-payment-default-logo {
+    display: none;
+}
+.hitpay-payment-option-label span {
+    float: left;
+    margin-right: 10px;
+}
+img.hitpay-logo {
+    float: left;
+    height: 28px;
+    padding: 2px
+}
