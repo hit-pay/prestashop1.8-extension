@@ -102,3 +102,7 @@ composer update;
 
 = 2.0.4 =
 - New logos are added
+
+= 2.0.5 =
+- Updated on May 11, 2024
+- Fixed Hitpay Fee Currency Issue

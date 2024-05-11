@@ -97,6 +97,11 @@ class HitPayPayment extends ObjectModel
     public $fees;
 
     /**
+     * @var string
+     */
+    public $home_currency;
+
+    /**
      * @var array
      */
     public static $definition = array(
@@ -167,10 +172,16 @@ class HitPayPayment extends ObjectModel
                 'size' => 255,
             ),
             'fees' => array(
-                'type' => self::TYPE_FLOAT,
+                'type' => self::TYPE_STRING,
                 'shop' => true,
-                 'validate' => 'isFloat',
+                 'validate' => 'isString',
                 'size' => 50
+            ),
+            'home_currency' => array(
+                'type' => self::TYPE_STRING,
+                'shop' => true,
+                 'validate' => 'isString',
+                'size' => 5
             ),
         ),
     );
