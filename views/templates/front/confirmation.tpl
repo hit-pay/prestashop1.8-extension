@@ -28,7 +28,7 @@
     <script>
     let hitpay_payment_id='{$hitpay_payment_id|escape:'htmlall':'UTF-8'}';
     let hitpay_cart_id='{$hitpay_cart_id|escape:'htmlall':'UTF-8'}';
-    let status_ajax_url='{$status_ajax_url|escape:'htmlall':'UTF-8'}';
+    /*let status_ajax_url='{$status_ajax_url|escape:'htmlall':'UTF-8'}';*/
     </script>
     <div>
         <p>&nbsp;</p>
