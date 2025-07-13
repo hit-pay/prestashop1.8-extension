@@ -96,6 +96,13 @@ class HitpayConfirmationModuleFrontController extends ModuleFrontController
                 $this->context->smarty->assign('hitpay_cart_id', $cart_id);
                 $this->context->smarty->assign('status_ajax_url', $ajax_url);
                 $this->context->smarty->assign('hitpay_img_path', _MODULE_DIR_.'hitpay/views/img/');
+				
+				Media::addJsDef(
+					array(
+						'status_ajax_url' => $ajax_url
+					)
+				);
+				
                 return $this->setTemplate('module:hitpay/views/templates/front/confirmation.tpl');
             }
         } catch (\Exception $e) {

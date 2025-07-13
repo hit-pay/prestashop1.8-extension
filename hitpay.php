@@ -59,7 +59,7 @@ class Hitpay extends PaymentModule
     {
         $this->name = 'hitpay';
         $this->tab = 'payments_gateways';
-        $this->version = '2.0.5';
+        $this->version = '2.0.6';
         $this->author = 'HitPay';
 
         $this->bootstrap = true;
@@ -69,7 +69,7 @@ class Hitpay extends PaymentModule
         $this->displayName = $this->l('HitPay Payment Gateway');
         $this->description = $this->l('Accept secure PayNow QR, Credit Card, WeChatPay and AliPay payments.');
         $this->limited_currencies = array('EUR', 'SGD');
-        $this->ps_versions_compliancy = array('min' => '1.7.1.0', 'max' => _PS_VERSION_);
+        $this->ps_versions_compliancy = array('min' => '8.0.0.0', 'max' => _PS_VERSION_);
     }
 
     public function install()
@@ -717,6 +717,12 @@ class Hitpay extends PaymentModule
         
         $create_payment_request_ajax_url = $this->context->link->getModuleLink('hitpay', 'createpaymentrequest');
         $this->context->smarty->assign('create_payment_request_ajax_url', $create_payment_request_ajax_url);
+		
+		Media::addJsDef(
+            array(
+                'create_payment_request_ajax_url' => $create_payment_request_ajax_url
+             )
+        );
         
         return $this->display(__FILE__, 'assign.tpl');
     }

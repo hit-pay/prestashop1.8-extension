@@ -12,7 +12,7 @@ composer install;
 ```
 == Method 2: ==
 
-1. Or download the latest released packaged from (https://github.com/hit-pay/prestashop1.7-extension/releases)
+1. Or download the latest released packaged from (https://github.com/hit-pay/prestashop1.8-extension/releases)
 2. And upload via FTP.
 3. Upload the files to under path/to/project/modules/hitpay/ folder.
 4. If hitpay folder does not exist under modules, create one.
@@ -35,7 +35,7 @@ composer update;
 ```
 == Method 2: ==
 
-1. Or download the latest released packaged from (https://github.com/hit-pay/prestashop1.7-extension/releases)
+1. Or download the latest released packaged from (https://github.com/hit-pay/prestashop1.8-extension/releases)
 2. And upload via FTP.
 3. Upload/Replace/Merge the files to under path/to/project/modules/hitpay/ folder.
 
@@ -79,30 +79,35 @@ composer update;
 
 ## Changelog
 
-= 1.0.0 =
-* Initial release.
-
-== Upgrade Notice ==
-
-= 2.0.0 =
-- HitPay payment details displayed under admin order total section
-- Added purpose field to the gateway
-- Merchants can enter their own payment title which will display during the checkout.
-- Merchants can choose their own order status which would be set upon successful payment.
-
-= 2.0.1 =
-- HitPay SDK included within the package
-
-= 2.0.2 =
-- Refund currency display issue in the admin
-- Fixed: Error message: Call to protected method ToolsCore::getContextLocale() from context 'Hitpay'
-
-= 2.0.3 =
-- Drop-in Feature Included
-
-= 2.0.4 =
-- New logos are added
+= 2.0.6 =
+* Updated on Jul 13, 2025
+* Tested on 9.0.0
+* Upgraded to compatible with 9.0.0
+* Fixed Drop-In create payment request ajax url
+* Fixed payment status display ajax url
 
 = 2.0.5 =
-- Updated on May 11, 2024
-- Fixed Hitpay Fee Currency Issue
+* Updated on May 11, 2024
+* Fixed Hitpay Fee Currency Issue
+
+= 2.0.4 =
+* New logos are added
+
+= 2.0.3 =
+* Drop-in Feature Included
+
+= 2.0.2 =
+* Refund currency display issue in the admin
+* Fixed: Error message: Call to protected method ToolsCore::getContextLocale() from context 'Hitpay'
+
+= 2.0.1 =
+* HitPay SDK included within the package
+
+= 2.0.0 =
+* HitPay payment details displayed under admin order total section
+* Added purpose field to the gateway
+* Merchants can enter their own payment title which will display during the checkout.
+* Merchants can choose their own order status which would be set upon successful payment.
+
+= 1.0.0 =
+* Initial release.
