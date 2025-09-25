@@ -59,7 +59,7 @@ class Hitpay extends PaymentModule
     {
         $this->name = 'hitpay';
         $this->tab = 'payments_gateways';
-        $this->version = '2.0.6';
+        $this->version = '2.0.7';
         $this->author = 'HitPay';
 
         $this->bootstrap = true;
@@ -93,8 +93,8 @@ class Hitpay extends PaymentModule
         }
 
         return parent::install() &&
-            $this->registerHook('header') &&
-            $this->registerHook('backOfficeHeader') &&
+            $this->registerHook('displayHeader') &&
+            $this->registerHook('displayBackOfficeHeader') &&
             $this->registerHook('paymentOptions') &&
             $order_status->id &&
             HitPayPayment::install() &&
@@ -677,7 +677,7 @@ class Hitpay extends PaymentModule
     /**
     * Add the CSS & JavaScript files you want to be loaded in the BO.
     */
-    public function hookBackOfficeHeader()
+    public function hookDisplayBackOfficeHeader()
     {
         if (Tools::getValue('module_name') == $this->name) {
             $this->context->controller->addJS($this->_path.'views/js/back.js');
@@ -841,7 +841,7 @@ class Hitpay extends PaymentModule
     
     public function upgrade_1_1_9()
     {
-        return $this->registerHook('displayAdminOrder') && $this->registerHook('actionOrderSlipAdd') && $this->registerHook('displayAdminOrderMainBottom');
+        return $this->registerHook('displayAdminOrder') && $this->registerHook('displayAdminOrderMainBottom');
     }
     
     public function upgrade_2_0_0()
@@ -869,6 +869,14 @@ class Hitpay extends PaymentModule
         Db::getInstance()->execute($sql);
 
         return true;
+    }
+
+    public function upgrade_2_0_7()
+    {
+        return $this->unregisterHook('backOfficeHeader') && 
+            $this->registerHook('displayBackOfficeHeader') && 
+            $this->unregisterHook('header') && 
+            $this->registerHook('displayHeader');
     }
     
     public function isWebhookTriggered($order_id)

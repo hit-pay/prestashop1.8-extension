@@ -79,6 +79,12 @@ composer update;
 
 ## Changelog
 
+= 2.0.7 =
+* Updated on Sep 25, 2025
+* Fixed: Deprecated: The hook "backOfficeHeader" is deprecated, please use "displayBackOfficeHeader" instead 
+* Fixed: Deprecated: The hook "header" is deprecated, please use "displayHeader" instead
+* Fixed: Deprecated: The hook "actionOrderSlipAdd" is added but no handler defined
+
 = 2.0.6 =
 * Updated on Jul 13, 2025
 * Tested on 9.0.0
